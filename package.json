@@ -1,0 +1,14 @@
+{
+  "name": "bank",
+  "version": "1.0.0",
+  "description": "Bank transaction assignment",
+  "main": "index.js",
+  "author": "Victor Zeddys",
+  "license": "MIT",
+  "dependencies": {
+    "truffle": "^5.5.26"
+  },
+  "devDependencies": {
+    "hardhat": "^2.10.2"
+  }
+}
