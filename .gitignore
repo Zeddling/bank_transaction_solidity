@@ -15,3 +15,7 @@ node_modules
 *.launch
 .settings/
 *.sublime-workspace
+
+# hardhat
+cache
+artifacts
