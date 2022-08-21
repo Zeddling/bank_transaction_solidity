@@ -13,12 +13,12 @@ contract BankTransaction {
         bytes32 hash;
     }
 
+    bytes32[] payments;
+
     //  map address to pid array
     mapping(address => bytes32[]) addressPayments;
 
     mapping(bytes32 => Transaction) transactions;
-
-    event TransactionCreated(Transaction t);
 
     function create_payment(
         address cid,
@@ -39,10 +39,25 @@ contract BankTransaction {
         addressPayments[cid].push(pid);
         addressPayments[rid].push(pid);
         transactions[pid] = t;
+        payments.push(pid);
     }
 
     function findByPID(bytes32 pid) public view returns (Transaction memory t) {
         t = transactions[pid];
+    }
+
+    //  Helper function for tests
+    function findAll() public view returns (Transaction[] memory ts) {
+        uint256 len = payments.length;
+        ts = new Transaction[](len);
+
+        for (uint256 i = 0; i < len; i++) {
+            ts[i] = transactions[payments[i]];
+        }
+    }
+
+    function getPIDS() public view returns (bytes32[] memory) {
+        return payments;
     }
 
     function findByAccount(address account)
