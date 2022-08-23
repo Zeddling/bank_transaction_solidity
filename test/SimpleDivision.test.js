@@ -2,7 +2,7 @@ const { assert } = require("chai");
 
 const SimpleDivision = artifacts.require('SimpleDivision');
 
-contract('SImpleDivision', function () {
+contract('SimpleDivision', function () {
     beforeEach(async function () {
         this.sp = await SimpleDivision.new();
     });
@@ -16,8 +16,7 @@ contract('SImpleDivision', function () {
 
     it('test division recurring number returns 5 digit number', async function () {
         await this.sp.divide(2, 3);
-
         const res = await this.sp.getResult();
-        assert.equal(res, 6666);
+        assert.equal(res, 666);
     });
 })

@@ -1,16 +1,17 @@
 /** @type import('hardhat/config').HardhatUserConfig */
 require('@nomiclabs/hardhat-ethers');
+require('@openzeppelin/hardhat-upgrades')
 
-const { alchemiApiKey, mnemonic } = require('./secrets.json');
+const { alchemiApiKey, privateKey } = require('./secrets.json');
 
 module.exports = {
   solidity: "0.8.9",
-  network: {
-    rinkeby: {
-      url: `https://eth-mainnet.g.alchemy.com/v2/${alchemiApiKey}`,
-      accounts: {
-        mnemonic: mnemonic
-      }
+  defaultNetwork: "goerli",
+  networks: {
+    hardhat: {},
+    goerli: {
+      url: `https://eth-goerli.g.alchemy.com/v2/${alchemiApiKey}`,
+      accounts: [privateKey]
     }
   }
 };
