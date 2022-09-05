@@ -1,0 +1,157 @@
+{
+  "manifestVersion": "3.2",
+  "admin": {
+    "address": "0x942711E334Cfa9A66Af03357bf0f3d1FD08DC1D9",
+    "txHash": "0x904264ac9bc2ed87971ab0d1b600767408ac64e96345a7efe0d90ef43233e7fc"
+  },
+  "proxies": [
+    {
+      "address": "0x5b8833f1C5cea54033Ac0E5C12849032d3e3c0a0",
+      "txHash": "0x94cf9ed98073f007deb8b779b6d2eaefd0dcf5439527ebb5bd8520141e61b430",
+      "kind": "transparent"
+    },
+    {
+      "address": "0x3857A7212E8A227DfA1D729f57B1B90a3049De06",
+      "txHash": "0xe4a28c80f27dd8b82f1e4f17a5ee3c67c683a45111e7f25cdc3095dc754153b0",
+      "kind": "transparent"
+    }
+  ],
+  "impls": {
+    "b09710c910590c3754f40d7a77d98a4186f48ef97b2b98c57b2cfe33a54b2f15": {
+      "address": "0xa18BA047D11B108A68603231a824A8f8D52eeb75",
+      "txHash": "0xa79d4334c73970cd641a487938a7bedffc752a3f19846572a000d4091384402d",
+      "layout": {
+        "storage": [
+          {
+            "label": "res",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_uint256",
+            "contract": "SimpleDivision",
+            "src": "contracts/SimpleDivision.sol:8"
+          }
+        ],
+        "types": {
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          }
+        }
+      }
+    },
+    "d6a1209464956b730446912e941ce728b8a454324bb0a43a6223d96dac65cc4a": {
+      "address": "0x806015921686ab6Be720EdbE13957aC91beA372A",
+      "txHash": "0x623e5bfbe4a6debfc6ca58217fdea805fd5978eef0853c85bdf4931340428598",
+      "layout": {
+        "storage": [
+          {
+            "label": "payments",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_array(t_bytes32)dyn_storage",
+            "contract": "BankTransaction",
+            "src": "contracts/BankTransaction.sol:16"
+          },
+          {
+            "label": "addressPayments",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_mapping(t_address,t_array(t_bytes32)dyn_storage)",
+            "contract": "BankTransaction",
+            "src": "contracts/BankTransaction.sol:19"
+          },
+          {
+            "label": "transactions",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_mapping(t_bytes32,t_struct(Transaction)16_storage)",
+            "contract": "BankTransaction",
+            "src": "contracts/BankTransaction.sol:21"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_array(t_bytes32)dyn_storage": {
+            "label": "bytes32[]",
+            "numberOfBytes": "32"
+          },
+          "t_bytes32": {
+            "label": "bytes32",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_array(t_bytes32)dyn_storage)": {
+            "label": "mapping(address => bytes32[])",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_bytes32,t_struct(Transaction)16_storage)": {
+            "label": "mapping(bytes32 => struct BankTransaction.Transaction)",
+            "numberOfBytes": "32"
+          },
+          "t_string_storage": {
+            "label": "string",
+            "numberOfBytes": "32"
+          },
+          "t_struct(Transaction)16_storage": {
+            "label": "struct BankTransaction.Transaction",
+            "members": [
+              {
+                "label": "payment_id",
+                "type": "t_bytes32",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "client_id",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "recipient_id",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "2"
+              },
+              {
+                "label": "amount",
+                "type": "t_uint8",
+                "offset": 20,
+                "slot": "2"
+              },
+              {
+                "label": "created_at",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "3"
+              },
+              {
+                "label": "note",
+                "type": "t_string_storage",
+                "offset": 0,
+                "slot": "4"
+              },
+              {
+                "label": "hash",
+                "type": "t_bytes32",
+                "offset": 0,
+                "slot": "5"
+              }
+            ],
+            "numberOfBytes": "192"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          },
+          "t_uint8": {
+            "label": "uint8",
+            "numberOfBytes": "1"
+          }
+        }
+      }
+    }
+  }
+}
